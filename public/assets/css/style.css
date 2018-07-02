@@ -1,0 +1,185 @@
+# Empty CSS file for your own CSS
+
+
+.aside
+{
+	
+	width:30%;
+	margin:auto;
+	padding:auto;
+	float:left;
+}
+
+#aside
+{
+	
+	display:block;
+}
+
+#aside a:hover
+{
+	background: #E5F0FF;
+	color: #039;
+	
+}
+
+.container-fluid
+{
+	
+	background-color:rgba(0, 0, 0, 0);;
+	
+}
+
+.body
+{
+	
+	padding-top:70px;
+}
+
+.carousel-control
+{
+	top:0px;
+}
+
+.carousel slide
+{
+	
+	width:
+	height:
+}
+
+.Footer
+{
+	width:840;
+	height:180;
+	
+}
+
+.colunm
+{
+	position: fixed;
+    left: 250px;
+    width: 250;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+h1
+{
+	
+		text-align:center;
+		padding-bottom: 15px;
+}
+
+img
+{
+	border:0;
+	vertical-align:middle;
+	display:inline-block;
+	max-width:100%;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	padding=0px;
+}
+
+.item
+{
+	object-fit:contain;
+}
+
+.item active
+{
+	object-fit:contain;
+	
+}
+
+.logoMark
+{
+	vertical-align:middle;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu_lateral
+{
+	
+	float:left;
+}
+
+.navbar-brand
+{
+	background-position: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#navbar
+{
+	
+	padding-bottom: 60px;
+}
+
+.p
+{
+	
+	text-align:center;
+}
+
+#row2
+{
+	display:table;
+	table-layout: fixed;
+	
+}
+
+#row5
+{
+	
+	width: 250px;
+	float:right;
+	text-align:center;
+}
+
+.sideBarRight
+{
+	background-color:gray;
+	display:block;
+}
+
+.sideBarLeft
+{
+
+	background-color:gray;
+	display:block;
+	
+}
+---------------------------------------------------------------------------------------------
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) 
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
