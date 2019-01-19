@@ -18,12 +18,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			@section('title')
-				<h2> Amplimaré, sua moda praia.</h2>
+				<h2> Nome da sua loja aqui!!!</h2>
 			@endsection
 		</title>
 		<meta name="description" content="Source code generated using layoutit.com">
 	<meta name="Mayko Rodrigues" content="Cadastro simples de cliente!">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 		
@@ -44,7 +44,7 @@
 			<!--</footer>-->
 			<article>
 				<footer>
-					<img src="assets/Img_Home/Footer3.jpg" alt="Rodapé de página" />
+					<img src="Img/Footer3.jpg" alt="Rodapé de página" />
 				</footer>
 			</article>
 		</div>

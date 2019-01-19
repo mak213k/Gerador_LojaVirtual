@@ -10,94 +10,38 @@
 <div class="container-fluid" style="background-color:#ffffff">
 		<div class="col-md-12">
 			<header id="navbar">
-					<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-						<div class="navbar-header">
-							 
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button> <a class="navbar-brand" href="#"><img class="logoMark" alt="Amplimare" title="Amplimaré, amplie seu prazer." src="assets/Img_Home/LogoMarcaNomeAmplimare.jpg" align="center"/></a>
-						</div>
-						
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							
-							<ul class="nav navbar-nav" id="myTab">
-							
-							
-								<li id="liHome">
-									<a href="\Index" >Home</a>
-								</li>
-								<li id="liInformacoes">
-									<a href="\Informacoes" >Informações</a>
-								</li>
-								<li id="liProdutos">
-									<a href="\Produtos">Produtos</a>
-								</li>
-								<li id="liContato">
-									<a href="\Contato">Contato</a>
-								</li>
-								<li class="Active" id="liSobre">
-									<a href="\Sobre">Sobre</a>
-								</li>
-							
-							</ul>
-							<form class="navbar-form navbar-left" role="search">
-								<div class="form-group">
-									<input type="search" class="form-control">
-								</div> 
-								<button type="submit" class="btn btn-default">
-									Submit
-								</button>
-							</form>
-							<ul class="nav navbar-nav navbar-right">
-								<li>
-									<a href="#">Link</a>
-								</li>
-								<li class="dropdown">
-									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">Action</a>
-										</li>
-										<li>
-											<a href="#">Another action</a>
-										</li>
-										<li>
-											<a href="#">Something else here</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</nav>
+					@extends('padrao.menuPrincipal')
 			</header>
 					
 		</div>
 </div>	
 
-<br>
-<br>
-<hr>
-<br>
-<br>
-
 <body>
 
 	<section class="row" id="Sobre">
 	<div class="container-fluid" style="background-color:#ffffff">
+	
 		<article>						
 			<div class="row" id="row2">
 				<div class="col-md-3"></div>
 				<aside class="col-md-6">
+				
+					
+	
+		<nav aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+			<li class="breadcrumb-item"><a href="#">Sobre</a></li>
+		  </ol>
+		</nav>
+		
+	
+				
 					<article>
 							<br>
-							<img src="assets/Img_Home/LogoMarcaAmplimare.jpg" style="float: left">
+							<!--<img src="assets/Img_Home/LogoMarcaAmplimare.jpg" style="float: left">-->
 							<h1>
-								Informações sobre a empresa
+								Sobre a empresa
 							</h1>
 							<br>
 							<hr>
