@@ -1,3 +1,7 @@
+Gerador de páginas Ecommerce Online.
+
+Sistema enxuto para gerar páginas de vendas online com as principais páginas pedidas em trabalhos padrão.
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
