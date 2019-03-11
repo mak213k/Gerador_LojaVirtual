@@ -6,6 +6,10 @@ Sistema enxuto para gerar páginas de vendas online ou não para as principais p
 
 PHP, Larável, Mysql e Bootsrap são as tecnologias utilizadas neste projeto.
 
+# Documentação do projeto
+
+São diagramas UML criados com o StarUML 2º versão.
+
 ## License
 
 O gerador de páginas e loja virtual é open-sourced software licenciado pela [MIT license](http://opensource.org/licenses/MIT).
