@@ -18,6 +18,76 @@ Route::get('/', function () {
 
 */
 
+///Tentativa de painel administrativo
+Route::get('/painel', function(){
+	return view('Hbase/Dashboard/src/pages/index');
+});
+
+///Buttons
+Route::get('/sbAdmin_Buttons', function(){
+	return view('Hbase/Dashboard/src/pages/buttons');
+});
+
+///Página em branco
+Route::get('/sbAdmin_blank', function(){
+	return view('Hbase/Dashboard/src/pages/blank');
+});
+
+///Página em branco
+Route::get('/sbAdmin_flot', function(){
+	return view('Hbase/Dashboard/src/pages/flot');
+});
+
+///Página em branco
+Route::get('/sbAdmin_forms', function(){
+	return view('Hbase/Dashboard/src/pages/forms');
+});
+
+///Página em branco
+Route::get('/sbAdmin_grid', function(){
+	return view('Hbase/Dashboard/src/pages/grid');
+});
+
+///Página em branco
+Route::get('/sbAdmin_icons', function(){
+	return view('Hbase/Dashboard/src/pages/icons');
+});
+
+///Página em branco
+Route::get('/sbAdmin_login', function(){
+	return view('Hbase/Dashboard/src/pages/login');
+});
+
+///Página em branco
+Route::get('/sbAdmin_morris', function(){
+	return view('Hbase/Dashboard/src/pages/morris');
+});
+
+///Página em branco
+Route::get('/sbAdmin_tables', function(){
+	return view('Hbase/Dashboard/src/pages/tables');
+});
+
+///Página em branco
+Route::get('/sbAdmin_panels-wells', function(){
+	return view('Hbase/Dashboard/src/pages/panels-wells');
+});
+
+///Página em branco
+Route::get('/sbAdmin_notifications', function(){
+	return view('Hbase/Dashboard/src/pages/notifications');
+});
+
+///Página em branco
+Route::get('/sbAdmin_typography', function(){
+	return view('Hbase/Dashboard/src/pages/typography');
+});
+
+///Index do Dashboard
+Route::get('/Dashboard_index', function(){
+	return view('Hbase/Dashboard/src/index');
+});
+
 //É a home, página principal da loja de roupas. Modificar para xamppAplimare_index_roupas.
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
@@ -35,7 +105,11 @@ Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
 
-///Administração do site.
+
+//Aqui é uma rota para a área administrativa do site. Acesso Administrador ao site roupas.
+//Preciso pensar se implemento o admin por loja (área de negócio) ou se implemento um admin
+//para todos em um só.
+///Administração do site - Configurações da página.
 Route::get('/aDMIN', function(){
 	return view('Hbase/Admin/src/Admin_roupas_Home');
 });
@@ -52,10 +126,23 @@ Route::get('/Admin', function(){
 	return view('Hbase/Admin/src/Admin_roupas_Home');
 });
 
+//Aqui é uma rota para a área do Dashboard do site. Acesso Administrador ao site roupas.
+///Administração do site - Painel Dashboard.
+Route::get('/dASHBOARD', function(){
+	return view('Hbase/Dashboard/src/index');
+});
 
-//Aqui é uma rota para a área administrativa do site. Acesso Administrador ao site roupas.
-//Preciso pensar se implemento o admin por loja (área de negócio) ou se implemento um admin
-//para todos em um só.
+Route::get('/dashboard', function(){
+	return view('Hbase/Dashboard/src/index');
+});
+
+Route::get('/DASHBOARD', function(){
+	return view('Hbase/Dashboard/src/index');
+});
+
+Route::get('/Dashboard', function(){
+	return view('Hbase/Dashboard/src/index');
+});
 
 ///Administração dos produtos - roupas.
 ///
@@ -111,6 +198,58 @@ Route::get('/cONTATO', function(){
 	return view('Hbase/Contato/src/xamppAmplimare_Contato');
 });
 
+//Página em manutenção
+Route::get('/paginaManutencao', function(){
+	return view('Errors/paginaManutencao');
+});
+
+Route::get('/PaginaManutencao', function(){
+	return view('Errors/paginaManutencao');
+});
+
+Route::get('/paginamanutencao', function(){
+	return view('Errors/paginaManutencao');
+});
+
+Route::get('/PAGINAMANUTENCAO', function(){
+	return view('Errors/paginaManutencao');
+});
+
+//Aqui é uma rota de erro 404 para quando sair do fluxo normal do programa
+// e não encontrar página pesqquisada.
+Route::get('/Erros404', function(){
+	return view('Errors/404');
+});
+
+Route::get('/eRROS404', function(){
+	return view('Errors/404');
+});
+
+Route::get('/erros404', function(){
+	return view('Errors/404');
+});
+
+Route::get('/ERROS404', function(){
+	return view('Errors/404');
+});
+
+//Aqui é uma rota de erro 500 para erros internos como erro de lógica.
+Route::get('/Erros500', function(){
+	return view('Errors/500');
+});
+
+Route::get('/eRROS500', function(){
+	return view('Errors/500');
+});
+
+Route::get('/erros500', function(){
+	return view('Errors/500');
+});
+
+Route::get('/ERROS500', function(){
+	return view('Errors/500');
+});
+
 //Aqui é uma rota de erro 503 para quando sair do fluxo normal do programa
 // e não detecta a página correta.
 Route::get('/Erros503', function(){
@@ -128,25 +267,6 @@ Route::get('/erros503', function(){
 Route::get('/ERROS503', function(){
 	return view('Errors/503');
 });
-
-//Aqui é uma rota de erro 504 para quando sair do fluxo normal do programa
-// e não encontrar página.
-Route::get('/Erros504', function(){
-	return view('Errors/504');
-});
-
-Route::get('/eRROS504', function(){
-	return view('Errors/504');
-});
-
-Route::get('/erros504', function(){
-	return view('Errors/504');
-});
-
-Route::get('/ERROS504', function(){
-	return view('Errors/504');
-});
-
 
 //Aqui informações gerais como localização da empresa, outras unidades. Ligações
 //externas e etc.
@@ -167,7 +287,7 @@ Route::get('/informacoes', function(){
 });                       
 
 
-//Autenticação do usupario no sistema administrativo
+//Autenticação do usuário no sistema administrativo
 Route::get('/LoginAdmin', function(){
 	return view('Hbase/LoginAdmin/src/LoginAdmin');
 });    

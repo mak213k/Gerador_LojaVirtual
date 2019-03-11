@@ -29,6 +29,8 @@ switch($ativar){
 
 ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 <header class="container-fluid" style="background-color:#ffffff">
 	<section class="col-md-12">
 		<div id="navbar">
@@ -73,8 +75,8 @@ switch($ativar){
 						
 						<ul class="nav navbar-nav navbar-right">
 						  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="font-size:20px" data-toggle="tooltip" title="Carrinho de compras"></span></a></li>
-						  <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:20px" data-toggle="tooltip" title="Minha conta"></span></a></li>
-						  <li><a href="#"><span class="glyphicon glyphicon-log-in" style="font-size:20px" data-toggle="tooltip" title="Entrar"></span></a></li>
+						  <li><a href="\painel"><span class="glyphicon glyphicon-user" style="font-size:20px" data-toggle="tooltip" title="Minha conta"></span></a></li>
+						  <li><a href="\Login"><span class="glyphicon glyphicon-log-in" style="font-size:20px" data-toggle="tooltip" title="Entrar"></span></a></li>
 						</ul>
 						
 						<ul class="nav navbar-nav navbar-right">

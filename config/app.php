@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8080/Framework/Laravel/Amplimare_LojaVirtual/public'),
+    'url' => env('APP_URL', 'http://localhost:8000/Framework/Laravel/Amplimare_LojaVirtual/public'),
 
     /*
     |--------------------------------------------------------------------------

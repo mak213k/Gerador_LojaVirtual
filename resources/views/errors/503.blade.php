@@ -40,7 +40,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Erro não definido</div>
+                <div class="title">Serviço <br />Indisponível</div>
             </div>
         </div>
     </body>
