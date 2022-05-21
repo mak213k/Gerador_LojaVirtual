@@ -15,6 +15,9 @@ class CreateSobresTable extends Migration
     {
         Schema::create('sobres', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->string('endereco');
+            $table->string('telefone');
             $table->timestamps();
         });
     }

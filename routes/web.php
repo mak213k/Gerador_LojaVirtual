@@ -17,6 +17,20 @@ Route::get('/', function () {
 });
 
 */
+/**
+ * 
+ * 
+ */
+Route::resource('about', 'AboutController');
+
+
+
+/*
+Route::get('/about_create', function(){
+
+	return view('about', 'AboutController');
+});
+*/
 
 ///Tentativa de painel administrativo
 Route::get('/painel', function(){
