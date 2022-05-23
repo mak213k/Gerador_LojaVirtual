@@ -57,7 +57,7 @@ class AboutController extends Controller
         $show = About::create($request->all());
    
         return redirect()->route('admin.about.index')
-        ->with('success', 'Show is successfully saved');
+        ->with('success', 'Gravado com sucesso');
     }
 
     /**

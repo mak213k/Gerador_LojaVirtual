@@ -23,7 +23,7 @@ Route::get('/', function () {
  */
 Route::resource('about', 'AboutController');
 
-
+Route::resource('post','PostController');
 
 /*
 Route::get('/about_create', function(){

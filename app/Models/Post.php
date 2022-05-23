@@ -1,10 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+    protected $table = 'post';
+    protected $fillable = ['title', 'description', 'author','version', 'publish_at'];
 }

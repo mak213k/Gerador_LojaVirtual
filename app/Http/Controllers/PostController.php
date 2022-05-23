@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
@@ -14,7 +15,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $post = Post::latest()->paginate(5);
+
+        return view('admin.post.index',compact('post', $post))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $post = Post::all();
+        return view('admin.post.create', compact('post',$post ));
     }
 
     /**
@@ -35,7 +40,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|unique:post|max:255',
+            'description' => 'required|max:255',
+            'autor' => 'required',
+            'version' => 'required',
+        ]);
+
+        $show = Post::create($request->all())
+        ->with('success', 'Gravado com sucesso');
     }
 
     /**
@@ -46,7 +59,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('admin.post.show', compact('post'));
     }
 
     /**
@@ -57,7 +70,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.post.edit', compact('post'));
     }
 
     /**
@@ -69,7 +82,17 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
+            'author' => 'required',
+            'version' => 'required',
+        ]);
+        
+        $post->update($request->all());
+
+        return redirect()->route('post.index')
+        ->with('sucess', 'Salvo com sucesso');
     }
 
     /**
@@ -80,6 +103,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('post.index')
+        ->with('success', 'Deletado com sucesso');
     }
 }
