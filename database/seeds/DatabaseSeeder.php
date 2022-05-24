@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
            'address' => Str::random(100),
            'phone' => Str::random(9),
        ]);
+       
        $this->call(PostSeeder::class);
+
+       $this->call(ContactSeeder::class);
     }
 }

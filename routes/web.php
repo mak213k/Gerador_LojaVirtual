@@ -25,6 +25,8 @@ Route::resource('about', 'AboutController');
 
 Route::resource('post','PostController');
 
+Route::resource('contact','ContactController');
+
 /*
 Route::get('/about_create', function(){
 
