@@ -76,7 +76,7 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($contact)
     {
         return view('admin.contact.show', compact('contact'));
     }

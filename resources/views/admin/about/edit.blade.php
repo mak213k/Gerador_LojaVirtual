@@ -21,6 +21,7 @@
         </ul>
       </div><br />
     @endif
+    
     <form method="post" action="{{ route('about.update', $about) }}">
           <div class="form-group">
               @csrf

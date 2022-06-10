@@ -18,7 +18,7 @@ class PostController extends Controller
         $post = Post::latest()->paginate(5);
 
         return view('admin.post.index',compact('post', $post))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -28,8 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $post = Post::all();
-        return view('admin.post.create', compact('post',$post ));
+        //$post = Post::all();
+        return view('admin.post.create');
     }
 
     /**

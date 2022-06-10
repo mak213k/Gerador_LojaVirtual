@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MidiaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,25 @@ Route::resource('about', 'AboutController');
 Route::resource('post','PostController');
 
 Route::resource('contact','ContactController');
+
+//Route::resource('product','ProductController');
+
+Route::resource('midium', 'MidiumController');
+
+/*
+Route::get('midia', 'MidiaController@index');
+
+Route::post('midia', 'MidiaController@post');
+
+Route::put('midia/{midia}/edit', 'MidiaController@update');
+
+Route::delete('midia/{midia}', 'MidiaController@destroy');
+*/
+
+
+//Route::get('image-upload', 'MidiaController@imageUpload')->name('admin.image.upload');
+
+//Route::post('image-upload', 'MidiaController@imageUploadPost')->name('admin.image.upload.post');
 
 /*
 Route::get('/about_create', function(){

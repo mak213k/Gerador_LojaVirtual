@@ -66,7 +66,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(About $about)
     {
         return view('admin.about.show', compact('about'));
     }
