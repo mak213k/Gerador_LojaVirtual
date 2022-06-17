@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MidiaController;
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::resource('contact','ContactController');
 //Route::resource('product','ProductController');
 
 Route::resource('midium', 'MidiumController');
+
+Route::resource('products', 'ProductController');
+
+Route::resource('Carousel', 'CarouselController');
 
 /*
 Route::get('midia', 'MidiaController@index');
@@ -125,6 +130,9 @@ Route::get('/Dashboard_index', function(){
 });
 
 //É a home, página principal da loja de roupas. Modificar para xamppAplimare_index_roupas.
+Route::get('/', 'HomeController@index');
+
+/*
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
@@ -136,11 +144,7 @@ Route::get('/', function(){
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
-
-Route::get('/', function(){
-	return view('Hbase/Home/src/xamppAplimare_index');
-});
-
+*/
 
 //Aqui é uma rota para a área administrativa do site. Acesso Administrador ao site roupas.
 //Preciso pensar se implemento o admin por loja (área de negócio) ou se implemento um admin

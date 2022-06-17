@@ -27,5 +27,7 @@ class DatabaseSeeder extends Seeder
        $this->call(ContactSeeder::class);
 
        $this->call(MidiaSeeder::class);
+
+       $this->call(ProductSeeder::class);
     }
 }
