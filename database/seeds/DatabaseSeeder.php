@@ -22,12 +22,14 @@ class DatabaseSeeder extends Seeder
            'phone' => Str::random(9),
        ]);
        
-       $this->call(PostSeeder::class);
+       //$this->call(PostSeeder::class);
 
-       $this->call(ContactSeeder::class);
+       //$this->call(ContactSeeder::class);
 
-       $this->call(MidiaSeeder::class);
+       //$this->call(MidiaSeeder::class);
 
        $this->call(ProductSeeder::class);
+
+       $this->call(SectionSeeder::class);
     }
 }

@@ -37,6 +37,8 @@ Route::resource('products', 'ProductController');
 
 Route::resource('Carousel', 'CarouselController');
 
+Route::resource('section', 'SectionController');
+
 /*
 Route::get('midia', 'MidiaController@index');
 
