@@ -14,6 +14,6 @@ class HomeController extends Controller
         $sliders = Midium::all();
         $posts = Post::all()->take(3);
         $section = Section::all()->take(1);
-        return view('Hbase/Home/src/xamppAplimare_index', compact('sliders', $sliders, 'posts', $posts));
+        return view('Hbase/Home/src/xamppAplimare_index', compact('section', $section,'sliders', $sliders, 'posts', $posts));
     }
 }

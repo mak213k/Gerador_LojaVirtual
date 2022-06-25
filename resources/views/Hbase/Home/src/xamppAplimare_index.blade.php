@@ -5,7 +5,7 @@
 -->
 <?php 
 $count = 0;
-//var_dump($posts);exit();
+//var_dump($section);exit();
 
 ?>
 <style>
@@ -148,40 +148,26 @@ $count = 0;
 		<div class="col-md-12">
 			<div class="col-md-6 text_section">
 				<section>
-					<h1>Título</h1>
+
+				@foreach($section as $key => $sec)
+
+					<h1>{{$sec->title}}</h1>
 					<br>
 					<p>
 						<center>
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
-							Descrição para teste ASLDKLADKSAJDJAL LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA
-							Sasldjlaskjdklasj laskdlkasjdklasjDescrição para teste ASLDKLADKSAJDJAL 
-							LASKJDKLASJDKLASJDL LASLKASJKLDAJLKDJKLA Sasldjlaskjdklasj laskdlkasjdklasj
+							{{$sec->description}}
 						</center>
 					</p>
 				</section>
 			</div>
 			<div class="col-md-6 img_section">
 				<center>
-					<img class="img-responsive img_content" alt="Carousel Bootstrap Third" src="https://img.freepik.com/fotos-gratis/mulher-jovem-e-elegante-magnifica-com-grandes-olhos-castanhos-e-um-sorriso-incrivel_291049-2572.jpg?t=st=1655432643~exp=1655433243~hmac=57210dff2e34f864691653c9231355a5a741d484a0b702092648774344630164"  alt="" height="100" width="500" style="" />
+					<img class="img-responsive img_content" alt="Carousel Bootstrap Third" src="{{url('image', $sec->image)}}"  alt="" height="100" width="500" style="" />
 				</center>
 			</div>
 		</div>
 		<hr>
 		<br>
 		@endsection
-		
+		@endforeach
 </body>

@@ -25,6 +25,8 @@ Route::get('/', function () {
  */
 Route::resource('about', 'AboutController');
 
+Route::resource('footer', 'FooterController');
+
 Route::resource('post','PostController');
 
 Route::resource('contact','ContactController');

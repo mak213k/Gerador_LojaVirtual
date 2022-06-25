@@ -45,12 +45,12 @@
           <div class="form-group">
               @csrf
               <label for="image_position_left">A esquerda da tela?:</label>
-              <input type="checkbox" class="form-control" name="image_position_left" <?php  ($section->image_position_left == 1) ? 'checked="1"' : 'checked="0"' ?> />
+              <input type="checkbox" class="form-control" name="image_position_left" <?php echo ($section->image_position_left == 1) ? 'checked="1"' : 'checked="0"' ?> />
           </div>
 
           <div class="form-group">
               <label for="display">Visível:</label>
-              <input type="checkbox" class="form-control" name="display" <?php  ($section->display == 1) ? 'checked="1"' : 'checked="0"' ?> />
+              <input type="checkbox" class="form-control" name="display" <?php echo ($section->display == 1) ? 'checked="1"' : 'checked="0"' ?> />
           </div>
 
           <div class="form-group">
