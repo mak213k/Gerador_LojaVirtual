@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Products;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Products::latest()->paginate(5);
-        
-        return view('admin.products.index', compact('products', $products))
+        //$product = Product::latest()->paginate(5);
+        $product = Product::latest()->paginate(5);
+        $category = Category::all();
+
+        foreach( $product  as $value ){
+
+        }
+
+        return view('admin.product.index', compact('product', 'category'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     
     }
@@ -24,8 +31,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $contact = Products::all();
-        return view('admin.products.create', compact('products', $products));
+        //$product = Product::all();
+        $category = Category::all();
+        
+        return view('admin.product.create')->with(['category' => $category]);
     }
 
     public function store(Request $request)
@@ -35,42 +44,69 @@ class ProductController extends Controller
             'description' => 'required|max:50',
             'publish_at' => 'required',
         ]);
-        $products = Products::create($request->all());
-   
+        
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'productImage/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        Product::create($input);
+
         return redirect()->route('admin.products.index')
         ->with('success', 'Gravado com sucesso');
     }
 
-    public function show(Products $products)
+    public function show(Product $product)
     {
-        return view('admin.products.show', compact('products'));
+        return view('admin.product.show', compact('product'));
     }
 
-    public function edit(Products $products)
-    {
-        return view('admin.products.edit', compact('products'));
+    public function edit($id)
+    {   
+        $product = Product::find($id);
+        $category = Category::all();
+        
+        return view('admin.product.edit', compact('product', 'category'));
     }
 
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Product $product)
     {
+        
         $request->validate([
             'title' => 'required|max:50',
             'description' => 'required|max:50',
-            'publish_at' => 'required',
+            //'publish_at' => 'required',
         ]);
-
-        $products->update($request->all());
         
+        
+        $input = $request->all();
 
-        return redirect()->route('products.index')
+        if($image = $request->file('image')){
+            $destinationPath = 'productImage/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+        
+        $product->update($input);
+
+        return redirect()->route('product.index')
                 ->with('success', 'Salvo com sucesso');
     }
 
-    public function destroy(Products $products)
+    public function destroy(Product $product)
     {
-        $products->delete();
         
-        return Redirect::route('products.index');
+        $product->delete();
+        
+        return redirect()->route('product.index')
+        ->with('success', 'Deletado com sucesso');
     }
 
 

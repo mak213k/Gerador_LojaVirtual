@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MidiaController;
+use App\Http\Controllers\MidiumController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,9 @@ Route::resource('contact','ContactController');
 
 Route::resource('midium', 'MidiumController');
 
-Route::resource('products', 'ProductController');
+Route::resource('product', 'ProductController');
+
+Route::resource('category', 'CategoryController');
 
 Route::resource('Carousel', 'CarouselController');
 
