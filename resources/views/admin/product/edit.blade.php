@@ -54,11 +54,11 @@
           </div>
           <div class="form-group">
               <label for="cost_price">Custo:</label>
-              <input type="text" class="form-control" name="cost_price"/>
+              <input type="text" class="form-control" name="cost_price" value="{{ $product->cost_price }}"/>
           </div>
           <div class="form-group">
               <label for="price">Preço:</label>
-              <input type="text" class="form-control" name="price" value="{{ $product->price }}"/>
+              <input type="text" class="form-control" name="seller_price" value="{{ $product->seller_price }}"/>
           </div>
           <div class="form-group">
               <label for="measure">Medida de venda:</label>

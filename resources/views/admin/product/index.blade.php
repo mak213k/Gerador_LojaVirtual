@@ -19,6 +19,7 @@
           <td>Categoria</td>
           <td>Título</td>
           <td>Descrição</td>
+          <td>Custo</td>
           <td>Preço</td>
           <td>Medida de venda</td>
           <td>Imagem</td>
@@ -52,7 +53,8 @@
             <td>{{$category_field}}</td>
             <td>{{$value->title}}</td>
             <td>{{$value->description}}</td>
-            <td>{{$value->price}}</td>
+            <td>{{$value->cost_price}}</td>
+            <td>{{$value->seller_price}}</td>
             <td>{{$value->measure}}</td>
             <td><img src="productImage/{{ $value->image }}" width="100px"></td>
             <td>{{$value->publish_at}}</td>

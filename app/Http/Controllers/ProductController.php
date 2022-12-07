@@ -15,9 +15,6 @@ class ProductController extends Controller
         $product = Product::latest()->paginate(5);
         $category = Category::all();
 
-        foreach( $product  as $value ){
-
-        }
 
         return view('admin.product.index', compact('product', 'category'))
         ->with('i', (request()->input('page', 1) - 1) * 5);

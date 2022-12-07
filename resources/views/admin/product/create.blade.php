@@ -32,11 +32,7 @@
             <select class="form-control m-bot15" name="id_category" id="id_category">
                 <option value="0">Selecione</option>
               @foreach( $category as $ctg )
-                @if ( $ctg['id'] == $product->id_category )
-                  <option value="{{ $ctg['id'] }}" selected>{{ $ctg['description'] }}</option>
-                @else
-                  <option value="{{ $ctg['id'] }}">{{ $ctg['description'] }}</option>
-                @endIf
+                <option value="{{ $ctg['id'] }}">{{ $ctg['description'] }}</option>
               @endforeach
             </select>
           </div>

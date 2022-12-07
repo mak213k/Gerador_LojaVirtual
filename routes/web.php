@@ -38,6 +38,10 @@ Route::resource('midium', 'MidiumController');
 
 Route::resource('product', 'ProductController');
 
+Route::resource('purchase', 'PurchaseController');
+
+Route::resource('sales', 'SalesController');
+
 Route::resource('category', 'CategoryController');
 
 Route::resource('Carousel', 'CarouselController');

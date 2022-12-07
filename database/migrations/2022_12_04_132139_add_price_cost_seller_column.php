@@ -17,6 +17,7 @@ class AddPriceCostSellerColumn extends Migration
             $table->double('seller_price',8,2);
             $table->double('cost_price',8,2);
             $table->integer('id_category');
+            $table->dropColumn('price');
         });
     }
 
