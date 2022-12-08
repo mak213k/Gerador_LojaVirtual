@@ -32,7 +32,7 @@ Route::resource('post','PostController');
 
 Route::resource('contact','ContactController');
 
-//Route::resource('product','ProductController');
+Route::resource('admin','AdminController');
 
 Route::resource('midium', 'MidiumController');
 

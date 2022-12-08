@@ -49,9 +49,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="\painel">SB Admin v2.0</a>
+                <a class="navbar-brand" href="\painel">Sistema de Vendas Online</a>
             </div>
             <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-left">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="{{url('purchase')}}">
+                        <i class="fa fa-shopping-cart fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-top-links navbar-left">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="{{url('sales')}}">
+                        <i class="fa fa-shopping-bag fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-top-links navbar-left">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="{{url('product')}}">
+                        <i class="fa fa-briefcase fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
