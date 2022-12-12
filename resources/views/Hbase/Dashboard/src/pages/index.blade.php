@@ -299,7 +299,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="\painel"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="\home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

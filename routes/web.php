@@ -1,60 +1,94 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MidiumController;
 use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
-/*
 Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+Route::get('/Home', function(){
+huy	return view('painel');
+});
 */
-/**
- * 
- * 
- */
-Route::resource('about', 'AboutController');
+	
+Route::get('/dashboard', function(){
+	return view('Hbase/Dashboard/src/index');
+})->middleware(['auth']);
 
-Route::resource('footer', 'FooterController');
+///Tentativa de painel administrativo
+Route::get('/Home', function(){
+	return view('Hbase/Dashboard/src/pages/index');
+})->middleware('auth');
 
-Route::resource('post','PostController');
 
-Route::resource('contact','ContactController');
+///Tentativa de painel administrativo
+Route::get('/home', function(){
+	return view('Hbase/Dashboard/src/pages/index');
+})->middleware('auth');
 
-Route::resource('admin','AdminController');
+//Aqui é uma rota para a área do Dashboard do site. Acesso Administrador ao site roupas.
+///Administração do site - Painel Dashboard.
 
-Route::resource('midium', 'MidiumController');
+Route::get('/', function(){
+	return view('Hbase/Dashboard/src/index');
+});
 
-Route::resource('product', 'ProductController');
 
-Route::resource('purchase', 'PurchaseController');
+Route::get('/teste', function () {
+    return view('welcome');
+});
 
-Route::resource('sales', 'SalesController');
+///Index do Dashboard
+Route::get('/Dashboard_index', function(){
+	return view('Hbase/Dashboard/src/index');
+});
 
-Route::resource('category', 'CategoryController');
+//É a home, página principal da loja de roupas. Modificar para xamppAplimare_index_roupas.
+//Route::get('/', 'HomeController@index');
 
-Route::resource('Carousel', 'CarouselController');
+Route::resource('about', 'AboutController')->middleware('auth');
 
-Route::resource('section', 'SectionController');
+Route::resource('footer', 'FooterController')->middleware('auth');
+
+Route::resource('post','PostController')->middleware('auth');
+
+Route::resource('contact','ContactController')->middleware('auth');
+
+Route::resource('admin','AdminController')->middleware('auth');
+
+Route::resource('midium', 'MidiumController')->middleware('auth');
+
+Route::resource('product', 'ProductController')->middleware('auth');
+
+Route::resource('purchase', 'PurchaseController')->middleware('auth');
+
+Route::resource('sales', 'SalesController')->middleware('auth');
+
+Route::resource('category', 'CategoryController')->middleware('auth');
+
+Route::resource('Carousel', 'CarouselController')->middleware('auth');
+
+Route::resource('section', 'SectionController')->middleware('auth');
 
 /*
 Route::get('midia', 'MidiaController@index');
-
 Route::post('midia', 'MidiaController@post');
-
 Route::put('midia/{midia}/edit', 'MidiaController@update');
-
 Route::delete('midia/{midia}', 'MidiaController@destroy');
 */
 
@@ -65,15 +99,11 @@ Route::delete('midia/{midia}', 'MidiaController@destroy');
 
 /*
 Route::get('/about_create', function(){
-
 	return view('about', 'AboutController');
 });
 */
 
-///Tentativa de painel administrativo
-Route::get('/painel', function(){
-	return view('Hbase/Dashboard/src/pages/index');
-});
+
 
 ///Buttons
 Route::get('/sbAdmin_Buttons', function(){
@@ -135,23 +165,15 @@ Route::get('/sbAdmin_typography', function(){
 	return view('Hbase/Dashboard/src/pages/typography');
 });
 
-///Index do Dashboard
-Route::get('/Dashboard_index', function(){
-	return view('Hbase/Dashboard/src/index');
-});
 
-//É a home, página principal da loja de roupas. Modificar para xamppAplimare_index_roupas.
-Route::get('/', 'HomeController@index');
 
 /*
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
-
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
-
 Route::get('/', function(){
 	return view('Hbase/Home/src/xamppAplimare_index');
 });
@@ -175,24 +197,6 @@ Route::get('/ADMIN', function(){
 
 Route::get('/Admin', function(){
 	return view('Hbase/Admin/src/Admin_roupas_Home');
-});
-
-//Aqui é uma rota para a área do Dashboard do site. Acesso Administrador ao site roupas.
-///Administração do site - Painel Dashboard.
-Route::get('/dASHBOARD', function(){
-	return view('Hbase/Dashboard/src/index');
-});
-
-Route::get('/dashboard', function(){
-	return view('Hbase/Dashboard/src/index');
-});
-
-Route::get('/DASHBOARD', function(){
-	return view('Hbase/Dashboard/src/index');
-});
-
-Route::get('/Dashboard', function(){
-	return view('Hbase/Dashboard/src/index');
 });
 
 ///Administração dos produtos - roupas.
@@ -355,7 +359,7 @@ Route::get('/loginadmin', function(){
 	return view('Hbase/LoginAdmin/src/LoginAdmin');
 });      
 
-
+/*
 //Autenticação do cliente no sistema
 Route::get('/Login', function(){
 	return view('Hbase/Login/src/Login');
@@ -372,7 +376,7 @@ Route::get('/LOGIN', function(){
 Route::get('/login', function(){
 	return view('Hbase/Login/src/Login');
 });    
-
+*/
 
 //Aqui fica os produtos, preciso modificar para produtos_roupa. Assim poderei 
 //usar xamppAmplimare_Produtos com outros produtos para cada loja diferente.
@@ -411,5 +415,4 @@ Route::get('/SOBRE', function(){
 	return view('Hbase/Sobre/src/xamppAmplimare_Sobre');
 });
 
-
-
+require __DIR__.'/auth.php';
