@@ -33,13 +33,13 @@ Route::get('/dashboard', function(){
 ///Tentativa de painel administrativo
 Route::get('/Home', function(){
 	return view('Hbase/Dashboard/src/pages/index');
-})->middleware('auth');
+})
 
 
 ///Tentativa de painel administrativo
 Route::get('/home', function(){
 	return view('Hbase/Dashboard/src/pages/index');
-})->middleware('auth');
+})
 
 //Aqui é uma rota para a área do Dashboard do site. Acesso Administrador ao site roupas.
 ///Administração do site - Painel Dashboard.
@@ -79,7 +79,8 @@ Route::resource('purchase', 'PurchaseController')->middleware('auth');
 
 Route::resource('sales', 'SalesController')->middleware('auth');
 
-Route::resource('category', 'CategoryController')->middleware('auth');
+Route::resource('category', 'CategoryController')
+//Route::resource('category', 'CategoryController')->middleware('auth');
 
 Route::resource('Carousel', 'CarouselController')->middleware('auth');
 
